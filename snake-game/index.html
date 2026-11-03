@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="A modern, responsive Snake Game built with HTML, CSS and JavaScript." />
+  <title>Neon Snake — Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Snake home">
+        <span class="brand-mark" aria-hidden="true">蛇</span>
+        <span>NEON<span class="brand-accent">SNAKE</span></span>
+      </a>
+      <div class="topbar-tag"><span class="live-dot"></span> ARCADE MODE</div>
+    </header>
+
+    <section class="game-layout" aria-label="Snake game">
+      <div class="intro-copy">
+        <p class="eyebrow">CLASSIC ARCADE · REMIXED</p>
+        <h1>Eat. Grow.<br /><span>Don't get caught.</span></h1>
+        <p class="intro-description">Collect the glowing food, grow your snake, and beat your best score. How long can you survive?</p>
+      </div>
+
+      <section class="game-card">
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-label">SCORE</span>
+            <strong id="score">000</strong>
+          </div>
+          <div class="stat-box best-stat">
+            <span class="stat-label">BEST</span>
+            <strong id="best-score">000</strong>
+          </div>
+          <div class="stat-box level-stat">
+            <span class="stat-label">LEVEL</span>
+            <strong id="level">01</strong>
+          </div>
+        </div>
+
+        <div class="board-wrap">
+          <canvas id="game-canvas" width="600" height="600" aria-label="Snake game board" role="img"></canvas>
+
+          <div class="game-overlay" id="game-overlay">
+            <div class="overlay-content">
+              <div class="overlay-icon" id="overlay-icon">🐍</div>
+              <p class="overlay-kicker" id="overlay-kicker">READY PLAYER ONE?</p>
+              <h2 id="overlay-title">Let's play.</h2>
+              <p class="overlay-message" id="overlay-message">Snake ko dheere-dheere chalao. Arrow keys se direction badlo aur orange food khao. Space dabakar pause kar sakte ho!</p>
+              <button class="primary-button" id="overlay-button" type="button">START GAME <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-toolbar">
+          <div class="toolbar-hint"><span class="keycap">SPACE</span> Pause / Resume</div>
+          <div class="toolbar-actions">
+            <button class="icon-button" id="sound-button" type="button" aria-label="Turn sound off" title="Toggle sound">🔊</button>
+            <button class="icon-button" id="pause-button" type="button" aria-label="Pause game" title="Pause">Ⅱ</button>
+            <button class="icon-button" id="restart-button" type="button" aria-label="Restart game" title="Restart">↻</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-info">
+        <div class="info-card controls-card">
+          <div class="card-heading"><span class="heading-icon">⌨</span><h3>HOW TO PLAY</h3></div>
+          <p>Green snake ko orange food tak le jao. Food khane par 1 point milega aur snake lambi hogi. Wall se takrane se bacho.</p>
+          <div class="keyboard-controls" aria-label="Clickable movement controls">
+            <button class="key directional-key key-up" data-direction="up" type="button" aria-label="Move up" title="Move up">↑</button>
+            <button class="key directional-key" data-direction="left" type="button" aria-label="Move left" title="Move left">←</button>
+            <button class="key directional-key" data-direction="down" type="button" aria-label="Move down" title="Move down">↓</button>
+            <button class="key directional-key" data-direction="right" type="button" aria-label="Move right" title="Move right">→</button>
+          </div>
+          <div class="control-caption">CLICK ARROWS <span>OR</span> USE KEYBOARD</div>
+        </div>
+        <div class="info-card tip-card">
+          <div class="card-heading"><span class="heading-icon">✦</span><h3>PRO TIP</h3></div>
+          <p>Tip: Wall ke bilkul paas pahunchne ka wait mat karo. Corner se 2–3 blocks pehle direction badal do. Ek baar key tap karo; key daba kar mat rakho.</p>
+        </div>
+        <div class="mobile-controls" aria-label="Touch controls">
+          <button class="touch-key touch-up" data-direction="up" type="button" aria-label="Move up">↑</button>
+          <div class="touch-middle">
+            <button class="touch-key" data-direction="left" type="button" aria-label="Move left">←</button>
+            <button class="touch-key" data-direction="down" type="button" aria-label="Move down">↓</button>
+            <button class="touch-key" data-direction="right" type="button" aria-label="Move right">→</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer"><span>BUILT FOR THE LOVE OF CLASSIC GAMES</span><span>HTML · CSS · JAVASCRIPT</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
